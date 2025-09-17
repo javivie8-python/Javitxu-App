@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Ritmo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Calculadora de Ritmo de Carrera</h1>
+    <form method="POST">
+        Nombre: <input type="text" name="nombre" required><br>
+        Km: <input type="number" name="distancia_km" required><br>
+        Metros: <input type="number" name="distancia_metros" required><br>
+        Horas: <input type="number" name="tiempo_horas" required><br>
+        Minutos: <input type="number" name="tiempo_min" required><br>
+        Segundos: <input type="number" name="tiempo_seg" required><br>
+        <input type="submit" value="Calcular">
+    </form>
+
+    {% if resultado %}
+        <h2>Resultado:</h2>
+        <p>{{ resultado|safe }}</p>
+    {% endif %}
+</body>
+</html>
